@@ -9,13 +9,6 @@ type striver_sheet = {
   notes: string;
 };
 
-type contest = {
-  problems: string;
-  notes: string;
-  isdone: boolean;
-  platform: string;
-};
-
 type personalProject = {
   name: string;
   notes: string;
@@ -34,11 +27,4 @@ type skillrack = {
   notes: string;
 };
 
-export type {
-  ptod,
-  striver_sheet,
-  contest,
-  personalProject,
-  podcast,
-  skillrack,
-};
+export type { ptod, striver_sheet, personalProject, podcast, skillrack };
