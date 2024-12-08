@@ -18,13 +18,23 @@ export default function PTOD() {
     if (data === undefined || data.length === 0) {
       const { error } = await supabase
         .from("Personal Tracking")
-        .insert([{ id: formattedDate, date: new Date() }]);
+        .insert([
+          {
+            id: formattedDate,
+            date: new Date(),
+            potd: { notes: "", dailyDone: false },
+            striver_sheet: { problemsSolved: 0, dailyDone: false, notes: "" },
+            personal: { notes: "", dailyDone: false },
+            internship: { notes: "", dailydone: false },
+            skill_rack: { notes: "", dailyDone: false, problemsSolved: 0 },
+          },
+        ]);
       if (error) {
         console.error("error", error);
         return;
       }
     }
-    const {  error: updateError } = await supabase
+    const { error: updateError } = await supabase
       .from("Personal Tracking")
       .update({
         potd: { notes: ptodNotes, dailyDone: true },
@@ -48,13 +58,23 @@ export default function PTOD() {
     if (data.length === 0) {
       const { error } = await supabase
         .from("Personal Tracking")
-        .insert([{ id: formattedDate, date: new Date() }]);
+        .insert([
+          {
+            id: formattedDate,
+            date: new Date(),
+            potd: { notes: "", dailyDone: false },
+            striver_sheet: { problemsSolved: 0, dailyDone: false, notes: "" },
+            personal: { notes: "", dailyDone: false },
+            internship: { notes: "", dailydone: false },
+            skill_rack: { notes: "", dailyDone: false, problemsSolved: 0 },
+          },
+        ]);
       if (error) {
         console.error("error", error);
         return;
       }
     }
-    const {  error: updateError } = await supabase
+    const { error: updateError } = await supabase
       .from("Personal Tracking")
       .update({
         potd: { dailyDone: !ptodDailyDone, notes: ptodNotes },
@@ -77,9 +97,19 @@ export default function PTOD() {
         return;
       }
       if (data.length === 0 || data === undefined || data === null) {
-        const {  error } = await supabase
+        const { error } = await supabase
           .from("Personal Tracking")
-          .insert([{ id: formattedDate, date: new Date() }]);
+          .insert([
+            {
+              id: formattedDate,
+              date: new Date(),
+              potd: { notes: "", dailyDone: false },
+              striver_sheet: { problemsSolved: 0, dailyDone: false, notes: "" },
+              personal: { notes: "", dailyDone: false },
+              internship: { notes: "", dailydone: false },
+              skill_rack: { notes: "", dailyDone: false, problemsSolved: 0 },
+            },
+          ]);
         if (error) {
           console.error("error", error);
           return;
