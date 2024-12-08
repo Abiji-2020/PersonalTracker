@@ -18,7 +18,7 @@ export default function Dev() {
       return;
     }
     if (data.length === 0) {
-      const { data, error } = await supabase
+      const {  error } = await supabase
         .from("Personal Tracking")
         .insert([{ id: formattedDate, date: new Date() }]);
       if (error) {

@@ -16,7 +16,7 @@ export default function Striver() {
       return;
     }
     if (data === undefined || data.length === 0) {
-      const { data, error } = await supabase
+      const {  error } = await supabase
         .from("Personal Tracking")
         .insert([{ id: formattedDate, date: new Date() }]);
       if (error) {
@@ -24,7 +24,7 @@ export default function Striver() {
         return;
       }
     }
-    const { data: updatedData, error: updateError } = await supabase
+    const { error: updateError } = await supabase
       .from("Personal Tracking")
       .update({
         striver_sheet: {
@@ -50,7 +50,7 @@ export default function Striver() {
       return;
     }
     if (data.length === 0) {
-      const { data, error } = await supabase
+      const {  error } = await supabase
         .from("Personal Tracking")
         .insert([{ id: formattedDate, date: new Date() }]);
       if (error) {
@@ -58,7 +58,7 @@ export default function Striver() {
         return;
       }
     }
-    const { data: updatedData, error: updateError } = await supabase
+    const {  error: updateError } = await supabase
       .from("Personal Tracking")
       .update({
         striver_sheet: {
@@ -84,7 +84,7 @@ export default function Striver() {
       return;
     }
     if (data.length === 0) {
-      const { data, error } = await supabase
+      const {  error } = await supabase
         .from("Personal Tracking")
         .insert([{ id: formattedDate, date: new Date() }]);
       if (error) {
@@ -92,7 +92,7 @@ export default function Striver() {
         return;
       }
     }
-    const { data: updatedData, error: updateError } = await supabase
+    const {  error: updateError } = await supabase
       .from("Personal Tracking")
       .update({
         striver_sheet: {

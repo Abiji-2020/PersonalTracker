@@ -16,7 +16,7 @@ export default function PTOD() {
       return;
     }
     if (data === undefined || data.length === 0) {
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from("Personal Tracking")
         .insert([{ id: formattedDate, date: new Date() }]);
       if (error) {
@@ -24,7 +24,7 @@ export default function PTOD() {
         return;
       }
     }
-    const { data: updatedData, error: updateError } = await supabase
+    const {  error: updateError } = await supabase
       .from("Personal Tracking")
       .update({
         potd: { notes: ptodNotes, dailyDone: true },
@@ -46,7 +46,7 @@ export default function PTOD() {
       return;
     }
     if (data.length === 0) {
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from("Personal Tracking")
         .insert([{ id: formattedDate, date: new Date() }]);
       if (error) {
@@ -54,7 +54,7 @@ export default function PTOD() {
         return;
       }
     }
-    const { data: updatedData, error: updateError } = await supabase
+    const {  error: updateError } = await supabase
       .from("Personal Tracking")
       .update({
         potd: { dailyDone: !ptodDailyDone, notes: ptodNotes },
@@ -77,7 +77,7 @@ export default function PTOD() {
         return;
       }
       if (data.length === 0 || data === undefined || data === null) {
-        const { data, error } = await supabase
+        const {  error } = await supabase
           .from("Personal Tracking")
           .insert([{ id: formattedDate, date: new Date() }]);
         if (error) {

@@ -15,7 +15,7 @@ export default function Internship() {
       return;
     }
     if (data.length === 0) {
-      const { data, error } = await supabase
+      const {  error } = await supabase
         .from("Personal Tracking")
         .insert([{ id: formattedDate, date: new Date() }]);
       if (error) {
@@ -23,7 +23,7 @@ export default function Internship() {
         return;
       }
     }
-    const { data: updatedData, error: updateError } = await supabase
+    const {  error: updateError } = await supabase
       .from("Personal Tracking")
       .update({
         internship: { dailydone: !internshipdailydone, notes: internshipnotes },
@@ -45,7 +45,7 @@ export default function Internship() {
       return;
     }
     if (data.length === 0) {
-      const { data, error } = await supabase
+      const {  error } = await supabase
         .from("Personal Tracking")
         .insert([{ id: formattedDate, date: new Date() }]);
       if (error) {
@@ -53,7 +53,7 @@ export default function Internship() {
         return;
       }
     }
-    const { data: updatedData, error: updateError } = await supabase
+    const {  error: updateError } = await supabase
       .from("Personal Tracking")
       .update({ internship: { notes: internshipnotes, dailydone: true } })
       .eq("id", formattedDate);
@@ -75,7 +75,7 @@ export default function Internship() {
         return;
       }
       if (data.length === 0) {
-        const { data, error } = await supabase
+        const { error } = await supabase
           .from("Personal Tracking")
           .insert([{ id: formattedDate, date: new Date() }]);
         if (error) {

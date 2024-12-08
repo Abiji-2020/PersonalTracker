@@ -1,4 +1,3 @@
-import CheckBoxCard from "./components/checkbox";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dev from "./components/Dev";
