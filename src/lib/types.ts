@@ -1,5 +1,4 @@
 type ptod = {
-  problem: string;
   notes: string;
   isdone: boolean;
 };

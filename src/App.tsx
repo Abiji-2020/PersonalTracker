@@ -1,14 +1,17 @@
 import CheckBoxCard from "./components/checkbox";
-import { MantineProvider } from "@mantine/core";
 import "./App.css";
-import "@mantine/core/styles.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dev from "./components/Dev";
+import Display from "./components/Display";
+
 function App() {
   return (
-    <MantineProvider>
-      <div>
-        <CheckBoxCard />
-      </div>
-    </MantineProvider>
+    <Router>
+      <Routes>
+        <Route path="/dev" element={<Dev />} />
+        <Route path="/" element={<Display />} />
+      </Routes>
+    </Router>
   );
 }
 
