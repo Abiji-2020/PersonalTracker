@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { Checkbox, Text, UnstyledButton } from '@mantine/core';
-import classes from '../style/components/checkbox.module.css';
+import { useState } from "react";
+import { Checkbox, Text, UnstyledButton } from "@mantine/core";
+import classes from "../style/components/checkbox.module.css";
 
-export  default function CheckBoxCard() {
+export default function CheckBoxCard() {
   const [value, onChange] = useState(true);
 
   return (
@@ -13,7 +13,7 @@ export  default function CheckBoxCard() {
         tabIndex={-1}
         size="md"
         mr="xl"
-        styles={{ input: { cursor: 'pointer' } }}
+        styles={{ input: { cursor: "pointer" } }}
         aria-hidden
       />
 
