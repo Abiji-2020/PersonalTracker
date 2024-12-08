@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase, formatDateToDDMMYYYY } from "../lib/supabase";
 export default function Display() {
-  const [data, setData] = useState<any[]>([]);
+  const [ _ , setData] = useState<any[]>([]);
   const [item, setItem] = useState<any>({
     id: 1,
     date: new Date(),
